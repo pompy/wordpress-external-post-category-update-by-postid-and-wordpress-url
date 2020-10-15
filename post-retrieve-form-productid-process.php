@@ -12,10 +12,10 @@
       $postid = $_GET["postid"];
 
 if ( !get_post_status ( $postid ) ) {
-        echo "Post id doesnt exist <br/>";
+        echo "<font color='red'>Post id #" . $postid . " doesnt exist </font><br/>";
 }
 else {
-echo "Post id " . $postid . "  exist <br/>";
+echo "Post id #" . $postid . "  exist <br/>";
 
 if($iscategoryadded!=0) {
     
