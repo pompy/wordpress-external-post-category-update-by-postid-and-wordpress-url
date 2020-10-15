@@ -11,7 +11,7 @@
      
       $postid = $_GET["postid"];
 
-if ( get_post_status ( $postid ) ) {
+if ( !get_post_status ( $postid ) ) {
         echo "Post id doesnt exist <br/>";
 }
 else {
