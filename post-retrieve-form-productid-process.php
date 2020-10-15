@@ -52,6 +52,18 @@ $categoryidtobeaddedarray=array_map('intval', explode(',', $categoryidtobeadded)
 
 echo "Category " . $categoryidtobeadded . " Replaced Successfuly to post #" . $postid . "<br/>";
 }
+
+
+
+
+$terms = get_the_terms ( $postid, 'product_cat' );
+echo "<br/>Following categories are assigned (From wordpress database)<br/>";
+foreach ( $terms as $term ) {
+     $cat_id = $term->term_id . "(" . $term->name . ")<br/>";
+     echo $cat_id;
+}
+
+ 
 }
 
 ?>
