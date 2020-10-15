@@ -67,3 +67,5 @@ foreach ( $terms as $term ) {
 }
 
 ?>
+
+<?php echo "Url <A href='" . get_permalink($postid) . "'>" . get_permalink($postid) . "</a>"; ?>
