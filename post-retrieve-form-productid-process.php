@@ -30,8 +30,11 @@ foreach($category_detail as $item) {
 }
 $categoryidold=$categoryidold . $categoryidtobeadded;
 
-$categoryidoldarray = explode (",", $categoryidold);
+//$categoryidoldarray = explode (",", $categoryidold);
 
+
+
+$categoryidoldarray=array_map('intval', explode(',', $categoryidold));
 
 
     wp_set_object_terms( $postid, $categoryidoldarray, 'product_cat',true );
@@ -41,7 +44,9 @@ echo "Category " . $categoryidtobeadded . " Appended Successfuly to post #" . $p
 else {
     
 
-$categoryidtobeaddedarray = explode (",", $categoryidtobeadded);
+//$categoryidtobeaddedarray = explode (",",  $categoryidtobeadded);
+
+$categoryidtobeaddedarray=array_map('intval', explode(',', $categoryidtobeadded));
 
     wp_set_object_terms( $postid, $categoryidtobeaddedarray, 'product_cat' );
 
